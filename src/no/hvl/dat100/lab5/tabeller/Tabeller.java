@@ -4,18 +4,24 @@ public class Tabeller {
 
 	// a)
 	public static void skrivUt(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		for (int tall : tabell) {
+			System.out.println(tall);
+		}
 
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
+		String ut = "[";
+		for (int i = 0; i < tabell.length; i++) {
+			ut += tabell[i];
+			if (i < tabell.length - 1) {
+				ut += ",";
+			}
+		}
+		ut += "]";
+		return ut;
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-		
 	}
 
 	// c)
@@ -27,9 +33,17 @@ public class Tabeller {
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
+		boolean funnet = false;
+		int i = 0;
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
+		while (!funnet && i < tabell.length) {
+			if (tabell[i] == tall) {
+				funnet = true;
+			}
+			i++;
+
+		}
+		return funnet;
 	}
 
 	// e)
@@ -45,7 +59,7 @@ public class Tabeller {
 
 		// TODO
 		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
-		
+
 	}
 
 	// g)
