@@ -1,35 +1,66 @@
 package no.hvl.dat100.lab6.matriser;
 
 public class Matriser {
-
+	
 	// a)
 	public static void skrivUt(int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		for (int[] rad : matrise) {
+			
+			for (int v : rad) {
+				System.out.print(v + " ");
+			}
+			System.out.println();
+		}
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
 		
+		String stringTabell = "";
+		
+		for (int[] rad : matrise) {
+			
+			for (int i : rad) {
+				stringTabell += i + " ";
+			}
+				stringTabell += "\n";
+		}
+		System.out.println(stringTabell);
+		return stringTabell;
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
-	
+		int[][] nyMatrise = new int[matrise.length][matrise.length];
+		 
+		for (int r = 0; r<matrise.length; r++) {
+			
+			int[] rad = matrise[r];
+			
+			for (int v = 0; v<matrise.length; v++) {
+				nyMatrise[r][v] = rad[v] * tall;
+			}
+		}
+		return nyMatrise;
 	}
 
 	// d)
-	public static boolean erLik(int[][] a, int[][] b) {
+	public static boolean erLik(int[][] a, int[][] b) {   //Trenger kun å "skrive ut" en av matrisene (enten a eller b)
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
+		boolean ersamme = true;
+
+		for (int r = 0; r<a.length; r++) {
+			
+			for (int i = 0; i<r; i++) {
+				
+				if (a[r][i] != b[r][i]) {
+					ersamme = false;
+				}
+			}
+		}
+		return ersamme;
 	}
 	
 	// e)
