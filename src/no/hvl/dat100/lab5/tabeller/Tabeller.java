@@ -33,7 +33,7 @@ public class Tabeller {
 //			sum += tabell[i];
 //		}
 
-//		for (int i : tabell) {
+//		for (int tall : tabell) {
 //			sum += i;
 //		}
 		while (j < tabell.length) {
@@ -64,6 +64,7 @@ public class Tabeller {
 		for (int i = 0; i < tabell.length; i++) {
 			if (tall == tabell[i]) {
 				pos = i;
+				break;
 			}
 		}
 		return pos;
