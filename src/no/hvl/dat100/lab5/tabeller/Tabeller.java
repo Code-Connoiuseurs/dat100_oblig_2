@@ -15,14 +15,14 @@ public class Tabeller {
 
 	// b)
 	public static String tilStreng(int[] tabell) {
-		StringBuilder tallStreng = new StringBuilder();
+		String tallStreng = "";
 		
 		for (int i = 0; i < tabell.length; i++) {
 			if (i == tabell.length-1) {
-				tallStreng.append("" + tabell[i]);
+				tallStreng += tabell[i];
 				continue;
 			}
-			tallStreng.append("" + tabell[i] + ',') ;
+			tallStreng += tabell[i] + ",";
 		}
 		
 		return String.format("[%s]", tallStreng);
@@ -39,6 +39,7 @@ public class Tabeller {
 //		int i = 0;
 //		while (i < tabell.length) {
 //			sum += tabell[i];
+//			i++
 //		}
 			
 //		for (int tall : tabell) {
@@ -55,6 +56,7 @@ public class Tabeller {
 		for (int tabellTall : tabell) {
 			if (tabellTall == tall) {
 				inneholderTall = true;
+				break;
 			}
 		}
 		return inneholderTall;
@@ -97,7 +99,7 @@ public class Tabeller {
 	}
 	public static int[] sorter(int[] tabell) {
 		int[] kopiTabell = kopierTabell(tabell);
-		
+
 		// Implementering av bubble sort algoritmen
 		boolean endringForrige = true;
 		while (endringForrige) {
@@ -114,7 +116,7 @@ public class Tabeller {
 	public static int[] byttPlasser(int[] tabell, int i1, int i2) {
 		// Metode for å bytte verdiene mellom to indekser i en array
 		int[] kopiTabell = kopierTabell(tabell);
-		
+
 		kopiTabell[i1] = tabell[i2];
 		kopiTabell[i2] = tabell[i1];
 		return kopiTabell;
