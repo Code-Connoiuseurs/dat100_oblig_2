@@ -65,22 +65,37 @@ public class Matriser {
 			}
 		}
 		return like;
-
 	}
 
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
+		int[][] matriseKopi = new int[matrise.length][matrise.length];
 
+		for (int rad = 0; rad < matrise.length; rad++) {
+
+			for (int elem = 0; elem < matrise[rad].length; elem++) {
+				matriseKopi[rad][elem] = matrise[elem][rad];
+			}
+		}
+		return matriseKopi;
 	}
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
+		int[][] mltMatrise = new int[a.length][a.length];
 
+		for (int rad = 0; rad < a.length; rad++) {
+
+			for (int elemA = 0; elemA < b[0].length; elemA++) {
+
+				for (int elemB = 0; elemB < a.length; elemB++) {
+					mltMatrise[rad][elemA] += a[rad][elemB] * b[elemB][elemA];
+				}
+
+			}
+		}
+		return mltMatrise;
 	}
 }
